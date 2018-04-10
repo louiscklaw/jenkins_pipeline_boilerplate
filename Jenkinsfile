@@ -1,6 +1,9 @@
 pipeline {
   agent any
   stages {
+    stage('initialize'){
+      sh 'echo \'initialize\''
+    }
     stage('build') {
       parallel{
 
