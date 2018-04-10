@@ -2,9 +2,15 @@ pipeline {
   agent any
   stages {
     stage('initialize'){
-      steps{
-        sh 'echo \'initialize\''
-      }
+        steps{
+          sh 'echo \'initialize\''
+        }
+        stage('NV COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
     }
     stage('build') {
       parallel{
@@ -197,16 +203,6 @@ pipeline {
       }
     }
 
-    stage('debug commands'){
-      parallel{
-        stage('NV COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-      }
-    }
 
     stage('palletize') {
       parallel{
