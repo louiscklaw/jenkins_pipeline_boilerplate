@@ -2,9 +2,6 @@ pipeline {
   agent any
   stages {
     stage('initialize'){
-        steps{
-          sh 'echo \'initialize\''
-        }
         stage('NV COMMANDS') {
           steps {
             sh 'echo \'start build\''
