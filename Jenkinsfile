@@ -163,6 +163,35 @@ pipeline {
       }
     }
 
+    stage('Regression') {
+      parallel{
+        stage('P0') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('P1') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('P2') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('P3') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+      }
+    }
+
     stage('debug commands'){
       parallel{
         stage('NV COMMANDS') {
