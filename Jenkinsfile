@@ -1,16 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('initialize'){
-      parallel{
-        stage('NV COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-      }
-    }
 
     stage('build') {
       parallel{
@@ -43,6 +33,17 @@ pipeline {
           }
         }
 
+      }
+    }
+
+    stage('initialize'){
+      parallel{
+        stage('NV COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
       }
     }
 
